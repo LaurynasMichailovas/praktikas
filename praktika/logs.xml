@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user>
+    <firstName>firstName1</firstName>
+    <lastName>lastName1</lastName>
+    <code>code1</code>
+    <account>
+        <logs>
+            <log>
+                <logName>lognameTEST</logName>
+                <logdescription>logdiscription1</logdescription>
+                <logip>
+                    <logIp>8.8.4.4</logIp>
+                </logip>
+                <logsource>
+                    <sourceIp>8.8.8.8</sourceIp>
+                    <sourceName>fortigate</sourceName>
+                </logsource>
+                <severityInt>1</severityInt>
+            </log>
+            <log>
+                <logName>logname2</logName>
+                <logdescription>logdiscription2</logdescription>
+                <severityInt>2</severityInt>
+            </log>
+        </logs>
+        <password>Password1</password>
+        <userName>UserName1</userName>
+    </account>
+</user>

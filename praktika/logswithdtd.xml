@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE user [
+        <!ELEMENT user (firstName, lastName, code, account)>
+        <!ELEMENT firstName (#PCDATA)>
+        <!ELEMENT lastName (#PCDATA)>
+        <!ELEMENT code (#PCDATA)>
+        <!ELEMENT account (logs, password, userName)>
+        <!ELEMENT logs (log+)>
+        <!ELEMENT log (logDiscription, logName, logip?, logsource?, severityInt)>
+        <!ELEMENT logDiscription (#PCDATA)>
+        <!ELEMENT logName (#PCDATA)>
+        <!ELEMENT logip (logIp)>
+        <!ELEMENT logsource (sourceIp, sourceName)>
+        <!ELEMENT logIp (#PCDATA)>
+        <!ELEMENT sourceIp (#PCDATA)>
+        <!ELEMENT sourceName (#PCDATA)>
+        <!ELEMENT severityInt (#PCDATA)>
+        <!ELEMENT password (#PCDATA)>
+        <!ELEMENT userName (#PCDATA)>
+        ]>
+<user>
+    <firstName>firstName1</firstName>
+    <lastName>lastName1</lastName>
+    <code>code1</code>
+    <account>
+        <logs>
+            <log>
+                <logDiscription>logdiscription1</logDiscription>
+                <logName>logname1</logName>
+                <logip>
+                    <logIp>8.8.4.4</logIp>
+                </logip>
+                <logsource>
+                    <sourceIp>8.8.8.8</sourceIp>
+                    <sourceName>fortigate</sourceName>
+                </logsource>
+                <severityInt>1</severityInt>
+            </log>
+            <log>
+                <logDiscription>logdiscription2</logDiscription>
+                <logName>logname2</logName>
+                <severityInt>2</severityInt>
+            </log>
+        </logs>
+        <password>Password1</password>
+        <userName>UserName1</userName>
+    </account>
+</user>

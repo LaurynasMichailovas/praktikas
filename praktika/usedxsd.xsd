@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Global Element Declarations -->
+  <xsd:element name="firstName" type="xsd:string"/>
+  <xsd:element name="lastName" type="xsd:string"/>
+  <xsd:element name="code" type="xsd:string"/>
+  <xsd:element name="logDiscription" type="xsd:string"/>
+  <xsd:element name="logName" type="xsd:string"/>
+  <xsd:element name="logIp" type="xsd:string"/>
+  <xsd:element name="sourceIp" type="xsd:string"/>
+  <xsd:element name="sourceName" type="xsd:string"/>
+  <xsd:element name="severityInt" type="xsd:integer"/>
+  <xsd:element name="password" type="xsd:string"/>
+  <xsd:element name="userName" type="xsd:string"/>
+  <xsd:element name="logip" type="logipType"/>
+  <xsd:element name="logsource" type="logsourceType"/>
+  <xsd:element name="logList" type="logListType"/>
+  <xsd:element name="account" type="accountType"/>
+  <xsd:element name="user" type="userType"/>
+
+  <!-- Complex Type Definitions for elements that contain other elements -->
+  <xsd:complexType name="logipType">
+    <xsd:sequence>
+      <xsd:element ref="logIp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="logsourceType">
+    <xsd:sequence>
+      <xsd:element ref="sourceIp"/>
+      <xsd:element ref="sourceName"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="logListType">
+    <xsd:sequence>
+      <xsd:element ref="logDiscription"/>
+      <xsd:element ref="logName"/>
+      <xsd:element ref="logip" minOccurs="0"/>
+      <xsd:element ref="logsource" minOccurs="0"/>
+      <xsd:element ref="severityInt"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="accountType">
+    <xsd:sequence>
+      <xsd:element ref="logList" maxOccurs="unbounded"/>
+      <xsd:element ref="password"/>
+      <xsd:element ref="userName"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="userType">
+    <xsd:sequence>
+      <xsd:element ref="firstName"/>
+      <xsd:element ref="lastName"/>
+      <xsd:element ref="code"/>
+      <xsd:element ref="account"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
